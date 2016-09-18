@@ -1,0 +1,94 @@
+
+
+# Compile source file.
+if ("${CONFIG_CXX_FLAGS}" STREQUAL "")
+  set(CONFIG_CXX_FLAGS " ")
+endif("${CONFIG_CXX_FLAGS}" STREQUAL "")
+
+
+set(SRC_TINYXML_LIST	third_party/tinyxml/tinystr.cpp
+											third_party/tinyxml/tinyxml.cpp
+											third_party/tinyxml/tinyxmlerror.cpp
+											third_party/tinyxml/tinyxmlparser.cpp)
+	
+if (WIN32)										
+  set(SRC_THIRD_PARTY_LIST	${SRC_TINYXML_LIST})
+  source_group("src\\third_party\\tinyxml" FILES ${SRC_TINYXML_LIST})
+else()
+  set(SRC_THIRD_PARTY_LIST	${SRC_TINYXML_LIST})
+endif(WIN32)
+
+########################
+		
+#set(SRC_FX_FRAME_WINEXT_LIST	src/fxqa_charset.cpp)
+#set(HEADER_FX_FRAME_WINEXT_LIST	src/fxqa_charset.h)
+
+set(SRC_FRAME_LIST	frame/fxqa_test.cpp
+											frame/fxqa_testfiles.cpp
+											frame/fxqa_testlog.cpp
+											frame/fxqa_testmemory.cpp
+											frame/fxqa_xmlparser.cpp 
+											frame/fxqa_xmlwriter.cpp 
+											frame/fxqa_statussender.cpp
+											frame/fxqa_charset.cpp 
+											frame/fxqa_testinfo.cpp
+											frame/fxqa_dylibmanager.cpp
+											frame/fxqa_argparser.cpp)
+set(HEADER_FX_FRAME_LIST	frame/fxqa_test.h
+											frame/fxqa_testfiles.h
+											frame/fxqa_testlog.h
+											frame/fxqa_testmanager.h
+											frame/fxqa_testmemory.h
+											frame/fxqa_xmlparser.h 
+											frame/fxqa_xmlwriter.h 
+											frame/fxqa_statussender.h 
+											frame/fxqa_charset.h 
+											frame/fxqa_testinfo.h 
+											frame/fxqa_dylibmanager.h
+											frame/fxqa_argparser.h)			
+
+
+
+
+########################
+															
+set(SRC_DEMO_MAIN test/main.cpp)
+set(SRC_DEMO_LIST
+	test/demo.cpp 
+	test/demo_test.cpp)
+	
+set(HEADER_DEMO_LIST
+	test/demo.h
+	test/demo_test.h)		
+
+if (WIN32)
+	set(SRC_FRAME_LIST	${SRC_FRAME_LIST})
+	set(HEADER_FX_FRAME_LIST	${HEADER_FX_FRAME_LIST})
+	source_group("src\\frame\\" FILES ${SRC_FRAME_LIST})
+	source_group("src" FILES ${SRC_DEMO_MAIN})		
+	source_group("src\\test" FILES ${SRC_DEMO_LIST})		
+	source_group("include\\test\\" FILES ${HEADER_DEMO_LIST})
+	source_group("include\\frame\\" FILES ${HEADER_FX_FRAME_LIST})
+endif()
+						
+														
+########################
+
+														
+set(SRC_LIST	${SRC_THIRD_PARTY_LIST}
+								${SRC_FRAME_LIST}
+								${SRC_DEMO_LIST}
+								${SRC_DEMO_MAIN})
+								
+set(HEADER_LIST	${HEADER_FX_TEST_LIST}
+							${HEADER_FX_FRAME_LIST})
+	
+set(ALL_LIST ${SRC_LIST} ${HEADER_LIST})
+
+# Interface variable for FX_COMPARE
+set(SOURCE_SRC_LIST ${SRC_LIST})
+set(SOURCE_HEADER_LIST ${HEADER_LIST})
+set(SOURCE_ALL_LIST ${ALL_LIST})
+
+
+

@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Package xmlns="http://schemas.microsoft.com/appx/2010/manifest" xmlns:m2="http://schemas.microsoft.com/appx/2013/manifest">
+  <Identity Name="069c94df-2c92-4d83-97d6-2dad9f36099c" Publisher="CN=xiaoxia" Version="1.0.0.0" />
+  <Properties>
+    <DisplayName>App4</DisplayName>
+    <PublisherDisplayName>xiaoxia</PublisherDisplayName>
+    <Logo>Assets\StoreLogo.png</Logo>
+  </Properties>
+  <Prerequisites>
+    <OSMinVersion>6.3.0</OSMinVersion>
+    <OSMaxVersionTested>6.3.0</OSMaxVersionTested>
+  </Prerequisites>
+  <Resources>
+    <Resource Language="x-generate" />
+  </Resources>
+  <Applications>
+    <Application Id="App" Executable="$targetnametoken$.exe" EntryPoint="App4.App">
+      <m2:VisualElements DisplayName="App4" Square150x150Logo="Assets\Logo.png" Square30x30Logo="Assets\SmallLogo.png" Description="App4" ForegroundText="light" BackgroundColor="#464646">
+        <m2:SplashScreen Image="Assets\SplashScreen.png" />
+      </m2:VisualElements>
+      <Extensions>
+        <Extension Category="windows.shareTarget">
+          <ShareTarget m2:Description="dll">
+            <SupportedFileTypes>
+              <SupportsAnyFileType />
+            </SupportedFileTypes>
+            <DataFormat>.dll</DataFormat>
+          </ShareTarget>
+        </Extension>
+        <Extension Category="windows.fileOpenPicker">
+          <FileOpenPicker>
+            <SupportedFileTypes>
+              <FileType>.pdf</FileType>
+            </SupportedFileTypes>
+          </FileOpenPicker>
+        </Extension>
+      </Extensions>
+    </Application>
+  </Applications>
+  <Capabilities>
+    <Capability Name="internetClient" />
+    <Capability Name="musicLibrary" />
+    <Capability Name="picturesLibrary" />
+    <Capability Name="enterpriseAuthentication" />
+    <Capability Name="privateNetworkClientServer" />
+    <Capability Name="removableStorage" />
+    <Capability Name="sharedUserCertificates" />
+    <Capability Name="videosLibrary" />
+    <Capability Name="internetClientServer" />
+    <DeviceCapability Name="location" />
+    <DeviceCapability Name="proximity" />
+    <DeviceCapability Name="webcam" />
+    <DeviceCapability Name="microphone" />
+  </Capabilities>
+</Package>

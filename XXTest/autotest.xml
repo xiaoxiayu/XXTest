@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<autotest name="fx_compare">
+    <testcase name="DemoTest" run="1">
+    	<test name="DibRenderCompare" run="1" ></test>
+    </testcase>
+	
+    <config>
+        <recurse>TRUE</recurse>        
+        <testfile_log>append</testfile_log>
+        <output_with_dir_structrue>TRUE1</output_with_dir_structrue>
+	    <save_image_limitcounts>10</save_image_limitcounts>
+	    <test_save_image_limitcounts>0</test_save_image_limitcounts>
+	    <testfiles_use_txt>FALSE</testfiles_use_txt>
+	    <save_bmp>FALSE</save_bmp>
+		<filecmp_after_generate_copypaste>FALSE</filecmp_after_generate_copypaste>
+    </config>
+    
+    <path>
+    	<windows>
+    		<files>allPdf</files>
+			<basefile></basefile>
+        	<comparefile></comparefile>
+        	<report>.</report>
+        </windows>
+        <linux>
+    		<files>testfiles</files>
+			<basefile></basefile>
+        	<comparefile></comparefile>
+        	<report>.</report>
+        </linux>
+        <mac>
+    		<files>testfiles</files>
+			<basefile></basefile>
+        	<comparefile></comparefile>
+        	<report>.</report>
+        </mac>
+        <ios>
+    		<files>allPdf</files>
+			<basefile></basefile>
+        	<comparefile></comparefile>
+        	<report>/.</report>
+        </ios>
+        <android>
+    		<files>testfiles</files>
+			<basefile></basefile>
+        	<comparefile></comparefile>
+        	<report>.</report>
+        </android>
+        <winrt>
+    		<files>testfiles</files>
+			<basefile></basefile>
+        	<comparefile></comparefile>
+        	<report>.</report>
+        </winrt>
+        <txt>txttestfiles.txt</txt>
+    </path>
+    	
+    <monitor>
+    	<crash run="1" port="10086" >127.0.0.1</crash>
+      	<death run="0" port="10018" >127.0.0.1</death>
+      	<log run="0" port="10019" >127.0.0.1</log>
+    </monitor>
+
+    <library>
+    	<windows>
+	    	<api newsvn="28395,2414" run="1">newapi.dll</api>
+	    	<api oldsvn="28339,2414" run="1">oldapi.dll</api>
+    	</windows>
+        <linux>
+	        <api newsvn="25478,1586" run="1">./libnewapi.so</api>
+	        <api oldsvn="25478,1586" run="1">./liboldapi.so</api>
+        </linux>
+        <mac>
+            <api newsvn="25341,1561" run="1">libnewapi.dylib</api>
+            <api oldsvn="25341,1561" run="1">liboldapi.dylib</api>
+        </mac>
+        <android>
+	        <api newsvn="25341,1561" run="1">/qatest/libnewapi.so</api>  
+	        <api oldsvn="25341,1561" run="1">/qatest/liboldapi.so</api>
+        </android>
+        <ios>
+	        <api newsvn="25341,1561" run="1">/qatest/libnewapi.dylib</api>  
+	        <api oldsvn="25341,1561" run="1">/qatest/liboldapi.dylib</api>
+        </ios>
+    </library>
+</autotest>
