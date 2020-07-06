@@ -75,7 +75,7 @@ MainWindow::MainWindow(QWidget *parent) :
         qDebug() << "CreateParser ERROR!!!";
      }
 
-     QString testfilePathQ = mediaDir.toString() + "/qalib/FoxitForm.pdf";
+     QString testfilePathQ = mediaDir.toString() + "/qalib/xxForm.pdf";
 
      QByteArray ba0 = testfilePathQ.toLatin1();
      const char* c_str20 = ba0.data();
@@ -88,7 +88,7 @@ MainWindow::MainWindow(QWidget *parent) :
 
      FX_INT32 retParseOld = m_newAPI->ParseDocument(pParser, c_str20);
      qDebug() << "ParseDocument Return: " << retParseOld;
-     retParseOld = m_newAPI->ParseDocument(pParser, L"/storage/emulated/0/qalib/FoxitForm.pdf");
+     retParseOld = m_newAPI->ParseDocument(pParser, L"/storage/emulated/0/qalib/xxForm.pdf");
      qDebug() << "ParseDocument Return2: " << retParseOld;
 
      retParseOld = m_newAPI->ParseDocument(pParser, (FX_LPCWSTR)filePath.c_str());
